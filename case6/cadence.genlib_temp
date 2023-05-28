@@ -1,0 +1,13 @@
+# The genlib library "cadence.genlib".
+GATE         ZERO       1.00   Y=CONST0;
+GATE          ONE       1.00   Y=CONST1;
+GATE        INVX1       2.00   Y=!A;
+    PIN         A        INV      1    999   1.00   0.00   1.00   0.00
+GATE        BUFX1       1.00   Y=A;
+    PIN         A     NONINV      1    999   1.00   0.00   1.00   0.00
+GATE        OR2X1       8.00   Y=A+B;
+    PIN         A     NONINV      1    999   1.00   0.00   2.00   0.00
+    PIN         B     NONINV      1    999   1.00   0.00   2.00   0.00
+GATE       AND2X1       8.00   Y=A*B;
+    PIN         A     NONINV      1    999   1.00   0.00   3.00   0.00
+    PIN         B     NONINV      1    999   1.00   0.00   3.00   0.00

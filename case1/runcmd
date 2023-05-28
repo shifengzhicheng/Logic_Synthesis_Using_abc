@@ -1,0 +1,19 @@
+read_library cadence.genlib
+read_verilog case1.v
+strash
+balance
+strash
+dsd
+strash
+renode
+fx
+strash
+refactor
+strash
+rewrite
+strash
+balance
+map
+print_stats
+write_verilog case1_out.v
+

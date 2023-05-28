@@ -1,0 +1,24 @@
+#
+# Supergate library derived for "cadence.genlib_temp" on Sun May 28 17:09:14 2023.
+#
+# Command line: "super  -i 5  -l 1  -d 10000000.00  -a 10000000.00  -t 100    cadence.genlib_temp".
+#
+# The number of inputs      =          5.
+# The number of levels      =          1.
+# The maximum delay         = 10000000.00.
+# The maximum area          = 10000000.00.
+# The maximum runtime (sec) =        100.
+#
+# The number of attempts    =         45.
+# The number of supergates  =          2.
+# The number of functions   =          0.
+# The total functions       = 4294967296 (2^32).
+#
+# Generation time (sec)     =       0.00.
+#
+cadence.genlib_temp
+5
+2
+7        
+* AND2X1 1 0
+* OR2X1 1 0
