@@ -1,4 +1,4 @@
-// Benchmark "case2" written by ABC on Sun May 28 19:14:59 2023
+// Benchmark "case2" written by ABC on Thu Jun 01 20:41:21 2023
 
 module case2 ( 
     a, b, c, d, e,
