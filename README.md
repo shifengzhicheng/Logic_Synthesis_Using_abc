@@ -19,7 +19,7 @@ Abc工具是UC Berkeley研发的一款逻辑综合工具，在该工具中，可
 
 其中runcmd中的命令便是abc工具自带的命令。
 
-在所提供的10个例子中，运行以上流程均可以实现读入原始文件case<i>.v，并输出综合后的文件case<i>_out.v。本次Project要做的内容便是在每个例子的runcmd文件中插入额外的命令，使电路的资源和时序优于给定的要求。
+在所提供的10个例子中，运行以上流程均可以实现读入原始文件case\<i>.v，并输出综合后的文件case\<i>_out.v。本次Project要做的内容便是在每个例子的runcmd文件中插入额外的命令，使电路的资源和时序优于给定的要求。
 
  
 
@@ -62,7 +62,7 @@ write_verilog case6_out.v %导出verilog文件
 
 ### abc命令简介
 
-有关abc命令的详细说明，可以在网站[https://people.eecs.berkeley.edu/~alanmi/abc/ (链接到外部网站。)](https://people.eecs.berkeley.edu/~alanmi/abc/)上看到。本次Project涉及的电路都是组合逻辑电路，因此主要用到Synthesis-Comb模块的命令。这里对这一模块的命令做一个简要的描述： 
+有关abc命令的详细说明，可以在网站[https://people.eecs.berkeley.edu/~alanmi/abc/](https://people.eecs.berkeley.edu/~alanmi/abc/)上看到。本次Project涉及的电路都是组合逻辑电路，因此主要用到Synthesis-Comb模块的命令。这里对这一模块的命令做一个简要的描述： 
 
 1. balance – 假设输入是一个 AIG 并创建一个具有最小延迟的等效 AIG，使用双输入与门的逻辑电平进行测量。 反相器不计入逻辑电平的数量。 生成的 AIG 是通过原始 AIG 中包含的多输入与门的代数平衡得出的。balancing按拓扑顺序应用，并选择每个多输入与门的最小延迟树分解。balancing考虑了主要输入的到达时间，这可以用 BLIF 表示。
 2. cleanup – 移除当前逻辑网络中的悬挂节点，即不扇出到 PO 和锁存器中的逻辑节点。 
