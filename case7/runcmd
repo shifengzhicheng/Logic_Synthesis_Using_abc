@@ -4,16 +4,10 @@ read_verilog case7.v
 strash
 balance
 strash
-dsd
-strash
-renode
-fx
-strash
-refactor
-strash
 rewrite
 strash
-balance
+renode
+
 map
 print_stats
 write_verilog case7_out.v
