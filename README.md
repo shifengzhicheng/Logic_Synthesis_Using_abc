@@ -100,6 +100,12 @@ write_verilog case6_out.v %导出verilog文件
 
 ### case1
 
+#### 运行要求
+
+| Case | Area< | Delay< |
+| ---- | ----- | ------ |
+| 1    | 204   | 14     |
+
 #### 运行结果
 
 ```bash
@@ -111,11 +117,11 @@ cmd运行结果
 
 不另外加代码的综合结果：
 
-<img src="picture\case10run_ori.png" alt="case10run_ori" width="600px;" />
+<img src="picture\case1run_ori.png" alt="case1run_ori" width="600px;" />
 
 优化了的综合结果：
 
-<img src="picture\case10run.png" alt="case10run" width="600px;" />
+<img src="picture\case1run.png" alt="case1run" width="600px;" />
 
 #### 输出结果
 
@@ -202,11 +208,11 @@ cmd运行结果
 
 不另外加代码的综合结果：
 
-<img src="picture\case10run_ori.png" alt="case10run_ori" width="600px;" />
+<img src="picture\case3run_ori.png" alt="case3run_ori" width="600px;" />
 
 优化了的综合结果：
 
-<img src="picture\case10run.png" alt="case10run" width="600px;" />
+<img src="picture\case3run.png" alt="case3run" width="600px;" />
 
 #### 输出结果
 
@@ -216,6 +222,12 @@ cmd运行结果
 ```
 
 ### case4
+
+#### 运行要求
+
+| Case | Area< | Delay< |
+| ---- | ----- | ------ |
+| 4    | 174   | 9      |
 
 #### 运行结果
 
@@ -228,11 +240,11 @@ cmd运行结果
 
 不另外加代码的综合结果：
 
-<img src="picture\case10run_ori.png" alt="case10run_ori" width="600px;" />
+<img src="picture\case4run_ori.png" alt="case4run_ori" width="600px;" />
 
 优化了的综合结果：
 
-<img src="picture\case10run.png" alt="case10run" width="600px;" />
+<img src="picture\case4run.png" alt="case4run" width="600px;" />
 
 #### 输出结果
 
@@ -260,11 +272,11 @@ cmd运行结果
 
 不另外加代码的综合结果：
 
-<img src="picture\case10run_ori.png" alt="case10run_ori" width="600px;" />
+<img src="picture\case5run_ori.png" alt="case5run_ori" width="600px;" />
 
 优化了的综合结果：
 
-<img src="picture\case10run.png" alt="case10run" width="600px;" />
+<img src="picture\case5run.png" alt="case5run" width="600px;" />
 
 #### 输出结果
 
@@ -355,11 +367,11 @@ cmd运行结果
 
 不另外加代码的综合结果：
 
-<img src="picture\case10run_ori.png" alt="case10run_ori" width="600px;" />
+<img src="picture\case7run_ori.png" alt="case7run_ori" width="600px;" />
 
 优化了的综合结果：
 
-<img src="picture\case10run.png" alt="case10run" width="600px;" />
+<img src="picture\case7run.png" alt="case7run" width="600px;" />
 
 #### 输出结果
 
