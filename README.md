@@ -474,7 +474,14 @@ endmodule
 
 ```bash
 cmd运行结果
-
+The number of gates read = 6.
+Read 6 gates from file "cadence.genlib".
+Selected 6 functionally unique gates. Time =    0.00 sec
+Created 2 rules and 2 matches. Time =    0.00 sec
+Warning: The network was strashed and balanced before mapping.
+A simple supergate library is derived from gate library "cadence.genlib".
+Loaded 2 unique 5-input supergates from "cadence.super".  Time =    0.00 sec
+case7        : i/o =    6/    3  lat =    0  nd =    15  edge =     25  area =90.00  delay =11.00  lev =  5
 ```
 
 #### 运行截图
@@ -491,6 +498,28 @@ cmd运行结果
 
 ```verilog
 // Benchmark "case2" written by ABC on Thu Jun 01 20:41:21 2023
+module case7 ( 
+    a, b, c, d, e, f,
+    y1, y2, y3  );
+  input  a, b, c, d, e, f;
+  output y1, y2, y3;
+  wire n9, n10, n11, n12, n13, n14, n15, n16, n17, n20, n21, n22;
+  INVX1  g00(.A(f), .Y(n9));
+  INVX1  g01(.A(c), .Y(n10));
+  INVX1  g02(.A(d), .Y(n11));
+  OR2X1  g03(.A(n11), .B(n10), .Y(n12));
+  AND2X1 g04(.A(n12), .B(n9), .Y(n13));
+  OR2X1  g05(.A(n13), .B(e), .Y(n14));
+  INVX1  g06(.A(n12), .Y(n15));
+  OR2X1  g07(.A(b), .B(a), .Y(n16));
+  OR2X1  g08(.A(n16), .B(n15), .Y(n17));
+  AND2X1 g09(.A(n17), .B(n14), .Y(y1));
+  OR2X1  g10(.A(n16), .B(f), .Y(y2));
+  INVX1  g11(.A(e), .Y(n20));
+  OR2X1  g12(.A(n9), .B(n20), .Y(n21));
+  AND2X1 g13(.A(n21), .B(y2), .Y(n22));
+  OR2X1  g14(.A(n22), .B(n15), .Y(y3));
+endmodule
 
 ```
 
@@ -518,7 +547,7 @@ case8        : i/o =   10/    5  lat =    0  nd =    23  edge =     40  area =14
 
 不另外加代码的综合结果：
 
-<img src="picture\case8run_ori.png" alt="case2run_ori" width="600px;" />
+<img src="picture\case8run_ori.png" alt="case8run_ori" width="600px;" />
 
 优化了的综合结果：
 
@@ -662,7 +691,7 @@ endmodule
 | 4    | 174   | 9      | 任钰浩 | 76.00  | 7.00  |
 | 5    | 336   | 89     |        |        |       |
 | 6    | 248   | 21     | 邱峻蓬 | 92.00  | 11.00 |
-| 7    | 294   | 32     | 任钰浩 |        |       |
+| 7    | 294   | 32     | 任钰浩 | 90.00  | 11.00 |
 | 8    | 668   | 55     | 郑志宇 | 148.00 | 16.00 |
 | 9    | 532   | 52     |        |        |       |
 | 10   | 330   | 34     | 邱峻蓬 | 86.00  | 11.00 |
