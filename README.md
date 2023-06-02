@@ -69,6 +69,7 @@ balance分为两步：covering和tree-balancing。其中covering将子集之间�
 <img src="picture\covering.png" alt="covering" width="600px;" />
 tree-balancing将covering得到的多输入与门分解为两输入与门，试图减少AIG深度：
 <img src="picture\tree_balancing.png" alt="tree_balancing" width="600px;" />
+
 2. cleanup – 移除当前逻辑网络中的悬挂节点，即不扇出到 PO 和锁存器中的逻辑节点。 
 3. collapse – 递归地将扇入节点组合成扇出节点，形成一个网络，其中每个CO由一个节点生成，其扇入是 CI。collapsing是通过使用BDD构建全局函数来执行的，因此仅限于相对较小的电路。collapsing后，节点功能使用BDD表示。 
 4. dsd – 使用 Bertacco/Damiani (ICCAD'97) 的算法应用disjoint-support decomposition。
@@ -78,6 +79,7 @@ tree-balancing将covering得到的多输入与门分解为两输入与门，试�
 8. renode – 假设输入是 AIG。 在此 AIG 中创建节点边界并折叠中间逻辑以形成更大的节点。
 9. rewrite – 执行 AIG 的 DAG 感知重写，试图减少 AIG 节点的数量和逻辑级别的数量。通过迭代地选择一个节点上的AIG子图，预先计算其所有NPN结果并保存子图，用子图中效果更佳的子图来替换当前AIG子图，以此来达到最小化节点数量的目的。
 <img src="picture\rewrite.png" alt="rewrite" width="600px;" />
+
 10. rr – 为 AIG 执行冗余删除。
 11. strash – 通过一级结构哈希将当前网络转换为 AIG。 由此产生的 AIG 是一个逻辑网络，由双输入与门和反相器组成，表示为边上的互补属性。 结构哈希是一种纯粹的组合变换，它不会修改锁存器的数量和位置。
 12. sweep – 适用于当前逻辑网络的经典扫描，产生逻辑网络。 Sweep 执行以下任务：移除悬挂节点（没有扇出的节点），将缓冲器和反相器折叠到它们的扇出中，传播常量，并移除重复的扇入。 Sweep 不能应用于 AIG，因为 AIG 在结构上是散列的，因此没有缓冲区、逆变器和未传播的常量节点。 要删除逻辑网络中的空闲节点，请使用cleanup。
