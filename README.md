@@ -52,12 +52,12 @@ write_verilog case6_out.v %导出verilog文件
 | 1    | 204   | 14     | 周翔   |
 | 2    | 366   | 25     | 郑志宇 |
 | 3    | 388   | 18     | 周翔   |
-| 4    | 174   | 9      |        |
-| 5    | 336   | 89     |        |
+| 4    | 174   | 9      | 任钰浩 |
+| 5    | 336   | 89     | 沈笑涵 |
 | 6    | 248   | 21     | 邱峻蓬 |
-| 7    | 294   | 32     |        |
+| 7    | 294   | 32     | 任钰浩 |
 | 8    | 668   | 55     | 郑志宇 |
-| 9    | 532   | 52     |        |
+| 9    | 532   | 52     | 沈笑涵 |
 | 10   | 330   | 34     | 邱峻蓬 |
 
 ### abc命令简介
@@ -379,8 +379,15 @@ endmodule
 
 ```bash
 cmd运行结果
-
+The number of gates read = 6.
+Read 6 gates from file "cadence.genlib".
+Selected 6 functionally unique gates. Time =    0.00 sec
+Created 2 rules and 2 matches. Time =    0.00 sec
+A simple supergate library is derived from gate library "cadence.genlib".
+Loaded 2 unique 5-input supergates from "cadence.super".  Time =    0.00 sec
+case5        : i/o =    6/    3  lat =    0  nd =    19  edge =     32  area =116.00  delay = 13.00  lev =  6
 ```
+
 
 #### 运行截图
 
@@ -395,7 +402,33 @@ cmd运行结果
 #### 输出结果
 
 ```verilog
-// Benchmark "case2" written by ABC on Thu Jun 01 20:41:21 2023
+module case5 ( 
+    a, b, c, d, e, f,
+    x, y, z  );
+  input  a, b, c, d, e, f;
+  output x, y, z;
+  wire n9, n10, n11, n12, n14, n15, n16, n17, n18, n19, n20, n22, n23, n24,
+    n25, n26;
+  INVX1  g00(.A(b), .Y(n9));
+  INVX1  g01(.A(c), .Y(n10));
+  OR2X1  g02(.A(n10), .B(n9), .Y(n11));
+  AND2X1 g03(.A(n11), .B(d), .Y(n12));
+  OR2X1  g04(.A(n12), .B(a), .Y(x));
+  INVX1  g05(.A(a), .Y(n14));
+  INVX1  g06(.A(f), .Y(n15));
+  OR2X1  g07(.A(n15), .B(n14), .Y(n16));
+  OR2X1  g08(.A(n16), .B(e), .Y(n17));
+  INVX1  g09(.A(n17), .Y(n18));
+  OR2X1  g10(.A(n18), .B(n10), .Y(n19));
+  AND2X1 g11(.A(d), .B(b), .Y(n20));
+  AND2X1 g12(.A(n20), .B(n19), .Y(y));
+  OR2X1  g13(.A(d), .B(c), .Y(n22));
+  AND2X1 g14(.A(n17), .B(b), .Y(n23));
+  INVX1  g15(.A(d), .Y(n24));
+  OR2X1  g16(.A(n24), .B(n10), .Y(n25));
+  OR2X1  g17(.A(n25), .B(n23), .Y(n26));
+  AND2X1 g18(.A(n26), .B(n22), .Y(z));
+endmodule
 
 ```
 
@@ -603,7 +636,13 @@ endmodule
 
 ```bash
 cmd运行结果
-
+The number of gates read = 6.
+Read 6 gates from file "cadence.genlib".
+Selected 6 functionally unique gates. Time =    0.00 sec
+Created 2 rules and 2 matches. Time =    0.00 sec
+A simple supergate library is derived from gate library "cadence.genlib".
+Loaded 2 unique 5-input supergates from "cadence.super".  Time =    0.00 sec
+case9        : i/o =   10/    5  lat =    0  nd =    31  edge =     53  area =194.00  delay =13.00  lev =  9
 ```
 
 #### 运行截图
@@ -619,7 +658,45 @@ cmd运行结果
 #### 输出结果
 
 ```verilog
-// Benchmark "case2" written by ABC on Thu Jun 01 20:41:21 2023
+module case9 ( 
+    a, b, c, d, e, f, g, h, i, j,
+    y1, y2, y3, y4, y5  );
+  input  a, b, c, d, e, f, g, h, i, j;
+  output y1, y2, y3, y4, y5;
+  wire n15, n16, n17, n18, n19, n20, n21, n22, n23, n24, n25, n26, n27, n29,
+    n30, n31, n32, n33, n34, n35, n36, n37, n39, n40, n41, n42;
+  AND2X1 g00(.A(b), .B(a), .Y(n15));
+  OR2X1  g01(.A(d), .B(c), .Y(n16));
+  INVX1  g02(.A(n16), .Y(n17));
+  OR2X1  g03(.A(n17), .B(n15), .Y(n18));
+  AND2X1 g04(.A(f), .B(e), .Y(n19));
+  OR2X1  g05(.A(f), .B(e), .Y(n20));
+  INVX1  g06(.A(n20), .Y(n21));
+  INVX1  g07(.A(g), .Y(n22));
+  INVX1  g08(.A(h), .Y(n23));
+  OR2X1  g09(.A(n23), .B(n22), .Y(n24));
+  OR2X1  g10(.A(n24), .B(n21), .Y(n25));
+  OR2X1  g11(.A(n25), .B(n19), .Y(n26));
+  INVX1  g12(.A(n26), .Y(n27));
+  AND2X1 g13(.A(n27), .B(n18), .Y(y1));
+  OR2X1  g14(.A(j), .B(i), .Y(n29));
+  INVX1  g15(.A(n29), .Y(n30));
+  OR2X1  g16(.A(n30), .B(n18), .Y(n31));
+  INVX1  g17(.A(a), .Y(n32));
+  INVX1  g18(.A(b), .Y(n33));
+  OR2X1  g19(.A(n33), .B(n32), .Y(n34));
+  AND2X1 g20(.A(n16), .B(n34), .Y(n35));
+  OR2X1  g21(.A(n29), .B(n35), .Y(n36));
+  AND2X1 g22(.A(n36), .B(n31), .Y(n37));
+  OR2X1  g23(.A(n37), .B(n27), .Y(y2));
+  OR2X1  g24(.A(n30), .B(n27), .Y(n39));
+  OR2X1  g25(.A(n39), .B(n35), .Y(n40));
+  INVX1  g26(.A(n40), .Y(n41));
+  AND2X1 g27(.A(n39), .B(n35), .Y(n42));
+  OR2X1  g28(.A(n42), .B(n41), .Y(y3));
+  AND2X1 g29(.A(n39), .B(n36), .Y(y4));
+  OR2X1  g30(.A(n37), .B(n27), .Y(y5));
+endmodule
 
 ```
 
@@ -689,9 +766,9 @@ endmodule
 | 2    | 366   | 25     | 郑志宇 | 78.00  | 7.00  |
 | 3    | 388   | 18     | 周翔   | 208.00 | 13.00 |
 | 4    | 174   | 9      | 任钰浩 | 76.00  | 7.00  |
-| 5    | 336   | 89     |        |        |       |
+| 5    | 336   | 89     | 沈笑涵 | 116.00 | 13.00 |
 | 6    | 248   | 21     | 邱峻蓬 | 92.00  | 11.00 |
 | 7    | 294   | 32     | 任钰浩 | 90.00  | 11.00 |
 | 8    | 668   | 55     | 郑志宇 | 148.00 | 16.00 |
-| 9    | 532   | 52     |        |        |       |
+| 9    | 532   | 52     | 沈笑涵 | 194.00 | 13.00 |
 | 10   | 330   | 34     | 邱峻蓬 | 86.00  | 11.00 |
