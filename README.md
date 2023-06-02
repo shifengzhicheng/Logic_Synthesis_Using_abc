@@ -67,7 +67,7 @@ write_verilog case6_out.v %导出verilog文件
 1. balance – 假设输入是一个 AIG 并创建一个具有最小延迟的等效 AIG，使用双输入与门的逻辑电平进行测量。 反相器不计入逻辑电平的数量。 生成的 AIG 是通过原始 AIG 中包含的多输入与门的代数平衡得出的。balancing按拓扑顺序应用，并选择每个多输入与门的最小延迟树分解。balancing考虑了主要输入的到达时间，这可以用 BLIF 表示。
 balance分为两步：covering和tree-balancing。其中covering将子集之间没有反相器且没有外部扇出的两输入与门组合在一起形成一个多输入与门：
 <img src="picture\covering.png" alt="covering" width="600px;" />
-tree-balancing将covering得到的多输入与门分解为两输入与门，试图减少AIG深度：
+  tree-balancing将covering得到的多输入与门分解为两输入与门，试图减少AIG深度：
 <img src="picture\tree_balancing.png" alt="tree_balancing" width="600px;" />
 
 2. cleanup – 移除当前逻辑网络中的悬挂节点，即不扇出到 PO 和锁存器中的逻辑节点。 
