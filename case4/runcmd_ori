@@ -2,6 +2,11 @@ read_library cadence.genlib
 read_verilog case4.v
 
 strash
+balance
+strash
+rewrite
+strash
+renode
 
 map
 print_stats
