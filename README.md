@@ -284,7 +284,14 @@ cmd运行结果
 #### 运行结果
 
 ```bash
-cmd运行结果
+The number of gates read = 6.
+Read 6 gates from file "cadence.genlib".
+Selected 6 functionally unique gates. Time =    0.00 sec
+Created 2 rules and 2 matches. Time =    0.00 sec
+Cleanup removed 0 dangling nodes.
+A simple supergate library is derived from gate library "cadence.genlib".
+Loaded 2 unique 5-input supergates from "cadence.super".  Time =    0.00 sec
+case6        : i/o =    6/    3  lat =    0  nd =    16  edge =     26  area =92.00  delay =11.00  lev =  5
 
 ```
 
@@ -292,16 +299,40 @@ cmd运行结果
 
 不另外加代码的综合结果：
 
-<img src="picture\case10run_ori.png" alt="case10run_ori" width="600px;" />
+<img src="picture\case6run_ori.png" alt="case6run_ori" width="600px;" />
 
 优化了的综合结果：
 
-<img src="picture\case10run.png" alt="case10run" width="600px;" />
+<img src="picture\case6run.png" alt="case6run" width="600px;" />
 
 #### 输出结果
 
 ```verilog
-// Benchmark "case2" written by ABC on Thu Jun 01 20:41:21 2023
+// Benchmark "case6" written by ABC on Fri Jun 02 03:01:34 2023
+
+module case6 ( 
+    a, b, c, d, e, f,
+    y1, y2, y3  );
+  input  a, b, c, d, e, f;
+  output y1, y2, y3;
+  wire n9, n10, n11, n12, n13, n14, n15, n16, n17, n18, n19, n20, n21;
+  OR2X1  g00(.A(f), .B(e), .Y(n9));
+  INVX1  g01(.A(n9), .Y(n10));
+  AND2X1 g02(.A(f), .B(e), .Y(n11));
+  OR2X1  g03(.A(n11), .B(n10), .Y(n12));
+  OR2X1  g04(.A(d), .B(c), .Y(n13));
+  OR2X1  g05(.A(n13), .B(n12), .Y(n14));
+  INVX1  g06(.A(e), .Y(n15));
+  INVX1  g07(.A(f), .Y(n16));
+  OR2X1  g08(.A(n16), .B(n15), .Y(n17));
+  AND2X1 g09(.A(n17), .B(n9), .Y(n18));
+  INVX1  g10(.A(a), .Y(n19));
+  INVX1  g11(.A(b), .Y(n20));
+  OR2X1  g12(.A(n20), .B(n19), .Y(n21));
+  OR2X1  g13(.A(n21), .B(n18), .Y(y2));
+  AND2X1 g14(.A(y2), .B(n14), .Y(y1));
+  INVX1  g15(.A(n14), .Y(y3));
+endmodule
 
 ```
 
@@ -448,7 +479,6 @@ cmd运行结果
 #### 运行结果
 
 ```bash
-cmd运行结果
 The number of gates read = 6.
 Read 6 gates from file "cadence.genlib".
 Selected 6 functionally unique gates. Time =    0.00 sec
@@ -495,9 +525,6 @@ module case10 (
   OR2X1  g12(.A(n16), .B(n11), .Y(y2));
 endmodule
 
-
-
-
 ```
 
 ## 最终结果对比
@@ -509,8 +536,8 @@ endmodule
 | 3    | 388   | 18     |        |        |       |
 | 4    | 174   | 9      |        |        |       |
 | 5    | 336   | 89     |        |        |       |
-| 6    | 248   | 21     |        |        |       |
+| 6    | 248   | 21     | 邱峻蓬 | 92.00  | 11.00 |
 | 7    | 294   | 32     |        |        |       |
 | 8    | 668   | 55     | 郑志宇 | 148.00 | 16.00 |
 | 9    | 532   | 52     |        |        |       |
-| 10   | 330   | 34     |        |        |       |
+| 10   | 330   | 34     | 邱峻蓬 | 86.00  | 11.00 |
