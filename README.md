@@ -449,7 +449,14 @@ cmd运行结果
 
 ```bash
 cmd运行结果
-
+The number of gates read = 6.
+Read 6 gates from file "cadence.genlib".
+Selected 6 functionally unique gates. Time =    0.00 sec
+Created 2 rules and 2 matches. Time =    0.00 sec
+Warning: The network has not been changed by "fx".
+A simple supergate library is derived from gate library "cadence.genlib".
+Loaded 2 unique 5-input supergates from "cadence.super".  Time =    0.00 sec
+case10       : i/o =    4/    2  lat =    0  nd =    13  edge =     23  area =86.00  delay =11.00  lev =  5
 ```
 
 #### 运行截图
