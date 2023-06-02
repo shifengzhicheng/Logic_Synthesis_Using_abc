@@ -2,19 +2,16 @@ read_library cadence.genlib
 read_verilog case3.v
 
 strash
+rewrite
 balance
-strash
 dsd
 strash
 renode
-fx
+cleanup
+
 strash
 refactor
-strash
-rewrite
-strash
-balance
+
 map
 print_stats
 write_verilog case3_out.v
-
